@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-enum Behavior { IDLE, CHASE, FLEE }
+signal died
+
+enum Behavior { IDLE, CHASE, FLEE, STARE }
 
 @export var behavior: Behavior = Behavior.IDLE
 @export var player: CharacterBody2D
@@ -8,18 +10,20 @@ enum Behavior { IDLE, CHASE, FLEE }
 @export var jump_velocity: float = -250.0
 @export var chase_range: float = 200.0
 @export var flee_range: float = 200.0
+@export var stare_freeze_duration: float = 1.5
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 var dead := false
 var jump_played := false
+var _freeze_timer := 0.0
 var _stuck_timer := 0.0
 var _last_x := 0.0
 
 
 func _ready() -> void:
-	_last_x = global_position.x
 	dead = true
+	_last_x = global_position.x
 	anim.play("born")
 	anim.animation_finished.connect(_on_born_finished, CONNECT_ONE_SHOT)
 
@@ -29,27 +33,20 @@ func _on_born_finished() -> void:
 	anim.play("idle")
 
 
-func _check_player_collision() -> void:
-	if not player:
-		return
-	for i in get_slide_collision_count():
-		if get_slide_collision(i).get_collider() == player:
-			match behavior:
-				Behavior.CHASE:
-					player.die()
-				Behavior.FLEE:
-					die()
-			return
-
-
 func die() -> void:
 	if dead:
 		return
 	dead = true
+	died.emit()
 	velocity = Vector2.ZERO
 	set_physics_process(false)
+	$CollisionShape2D.set_deferred("disabled", true)
 	anim.play("death")
-	anim.animation_finished.connect(func(_a: StringName): queue_free(), CONNECT_ONE_SHOT)
+	anim.frame_changed.connect(func():
+		if anim.frame >= anim.sprite_frames.get_frame_count("death") - 1:
+			modulate.a = 0.0
+			queue_free()
+	)
 
 
 func _physics_process(delta: float) -> void:
@@ -71,9 +68,18 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, speed)
 		Behavior.FLEE:
 			if dist <= flee_range:
-				_flee(delta)
+				_flee()
 			else:
 				velocity.x = move_toward(velocity.x, 0, speed)
+		Behavior.STARE:
+			if _player_is_watching():
+				_freeze_timer = stare_freeze_duration
+				velocity.x = move_toward(velocity.x, 0, speed)
+			elif _freeze_timer > 0.0:
+				_freeze_timer -= delta
+				velocity.x = move_toward(velocity.x, 0, speed)
+			else:
+				_chase(delta)
 
 	move_and_slide()
 	_check_player_collision()
@@ -83,32 +89,60 @@ func _physics_process(delta: float) -> void:
 func _chase(delta: float) -> void:
 	var dir: float = sign(player.global_position.x - global_position.x)
 	velocity.x = dir * speed
-
 	if dir != 0:
 		anim.flip_h = dir < 0
 
-	if is_on_floor():
-		var player_is_above: bool = player.global_position.y < global_position.y - 20.0
-		if player_is_above or is_on_wall():
-			velocity.y = jump_velocity
+	var player_above := player.global_position.y < global_position.y - 16.0
+	var player_below := player.global_position.y > global_position.y + 8.0
+
+	if is_on_floor() and player_above:
+		velocity.y = jump_velocity
+		return
+
+	if is_on_wall() and not player_below:
+		velocity.y = jump_velocity
 
 	_stuck_timer += delta
-	if _stuck_timer >= 0.3:
-		if abs(global_position.x - _last_x) < 2.0 and is_on_floor():
+	if _stuck_timer >= 0.25:
+		if abs(global_position.x - _last_x) < 1.0 and is_on_floor() and not player_below:
 			velocity.y = jump_velocity
 		_last_x = global_position.x
 		_stuck_timer = 0.0
 
 
-func _flee(delta: float) -> void:
+func _flee() -> void:
 	var dir: float = sign(global_position.x - player.global_position.x)
 	if dir == 0:
 		dir = 1.0
 	velocity.x = dir * speed
 	anim.flip_h = dir < 0
-
 	if is_on_floor() and is_on_wall():
 		velocity.y = jump_velocity
+
+
+func _player_is_watching() -> bool:
+	var dir_to_me: float = sign(global_position.x - player.global_position.x)
+	return dir_to_me == player.facing
+
+
+func _check_player_collision() -> void:
+	if not player or dead:
+		return
+
+	var touching := false
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_collider() == player:
+			touching = true
+			break
+	if not touching:
+		touching = global_position.distance_to(player.global_position) < 16.0
+
+	if touching:
+		match behavior:
+			Behavior.CHASE, Behavior.STARE:
+				player.die()
+			Behavior.FLEE:
+				die()
 
 
 func _update_animation() -> void:

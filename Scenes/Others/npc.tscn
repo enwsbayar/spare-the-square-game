@@ -141,14 +141,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glyv2"]
-size = Vector2(8, 8)
+size = Vector2(8, 7.825)
 
 [node name="npc" type="CharacterBody2D" unique_id=1313742742]
 script = ExtResource("1_p8282")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635390153]
+position = Vector2(0, 1.7881393e-07)
 sprite_frames = SubResource("SpriteFrames_g0waw")
-animation = &"jump"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1631868825]
+position = Vector2(0, -0.08749992)
 shape = SubResource("RectangleShape2D_glyv2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=212158148]

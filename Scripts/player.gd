@@ -10,9 +10,11 @@ extends CharacterBody2D
 var dead := false
 var jump_played := false
 var respawn := true
+var facing: float = 1.0
 
 
 func _ready() -> void:
+	add_to_group("player")
 	born()
 
 
@@ -30,14 +32,12 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * speed
 		anim.flip_h = direction < 0
+		facing = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	if Input.is_action_just_pressed("death"):
 		die()
-
-	if Input.is_action_just_pressed("born"):
-		born()
 
 	move_and_slide()
 	_update_animation()
