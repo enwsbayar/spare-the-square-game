@@ -1,0 +1,37 @@
+[gd_scene format=4 uid="uid://b2n4xpbrhrp0l"]
+
+[ext_resource type="PackedScene" uid="uid://daac5ssp04i8b" path="res://Scenes/Others/player.tscn" id="1_3ec6s"]
+[ext_resource type="Texture2D" uid="uid://dl8d1cvm60yps" path="res://Assets/black_tile.png" id="2_786j8"]
+[ext_resource type="PackedScene" uid="uid://tu0rmesp4u8w" path="res://Scenes/Others/portal.tscn" id="3_3mqfk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ld35i"]
+texture = ExtResource("2_786j8")
+texture_region_size = Vector2i(8, 8)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_m686n"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ld35i")
+
+[node name="test" type="Node2D" unique_id=683117807]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=284681123]
+position = Vector2(0, 4)
+zoom = Vector2(3, 3)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=24740951]
+tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAATAA0AAAAAAAAAAAASAA0AAAAAAAAAAAARAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAADAA0AAAAAAAAAAAACAA0AAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD+/w0AAAAAAAAAAAD9/w0AAAAAAAAAAAD8/w0AAAAAAAAAAAD7/w0AAAAAAAAAAAD6/w0AAAAAAAAAAAD5/w0AAAAAAAAAAAD4/w0AAAAAAAAAAAD3/w0AAAAAAAAAAAD2/w0AAAAAAAAAAAD1/w0AAAAAAAAAAAD0/w0AAAAAAAAAAADz/w0AAAAAAAAAAADy/w0AAAAAAAAAAADx/w0AAAAAAAAAAADw/w0AAAAAAAAAAADv/w0AAAAAAAAAAADu/w0AAAAAAAAAAADt/w0AAAAAAAAAAADs/w0AAAAAAAAAAADr/w0AAAAAAAAAAADq/w0AAAAAAAAAAADp/w0AAAAAAAAAAADo/w0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_m686n")
+
+[node name="spawn_point" type="Marker2D" parent="." unique_id=810920023]
+position = Vector2(-43, 86)
+
+[node name="portal" parent="." unique_id=280529490 instance=ExtResource("3_3mqfk")]
+position = Vector2(180, 92)
+
+[node name="player" parent="." unique_id=621912255 node_paths=PackedStringArray("spawn_point") instance=ExtResource("1_3ec6s")]
+position = Vector2(4, 43)
+spawn_point = NodePath("../spawn_point")
