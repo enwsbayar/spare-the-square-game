@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -250.0
+@export var speed: float = 100.0
+@export var jump_velocity: float = -250.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -24,14 +24,14 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	var direction := Input.get_axis("walk_left", "walk_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 		anim.flip_h = direction < 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	if Input.is_action_just_pressed("death"):
 		die()
