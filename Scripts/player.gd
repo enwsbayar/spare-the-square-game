@@ -68,7 +68,7 @@ func die() -> void:
 
 func _on_death_animation_finished() -> void:
 	if respawn:
-		born()
+		get_tree().reload_current_scene()
 
 
 func born() -> void:

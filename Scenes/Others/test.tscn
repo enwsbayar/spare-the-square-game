@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://ca54b6jkatsos"]
 
-[ext_resource type="PackedScene" uid="uid://ccl0msh7bjq73" path="res://Scenes/Others/spike.tscn" id="1_3ytr0"]
 [ext_resource type="Texture2D" uid="uid://dl8d1cvm60yps" path="res://Assets/black_tile.png" id="2_3ytr0"]
 [ext_resource type="PackedScene" uid="uid://daac5ssp04i8b" path="res://Scenes/Others/player.tscn" id="2_kguai"]
-[ext_resource type="PackedScene" uid="uid://dj6yphgyssuig" path="res://Scenes/Others/saw.tscn" id="4_ld35i"]
+[ext_resource type="PackedScene" uid="uid://v2tnajj407ct" path="res://Scenes/Others/npc.tscn" id="3_3ytr0"]
+[ext_resource type="PackedScene" uid="uid://cannon001" path="res://Scenes/Others/cannon.tscn" id="4_ld35i"]
+[ext_resource type="PackedScene" uid="uid://cxo8qnaat4p80" path="res://Scenes/Others/bullet.tscn" id="5_m686n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ld35i"]
 texture = ExtResource("2_3ytr0")
@@ -19,29 +20,28 @@ sources/0 = SubResource("TileSetAtlasSource_ld35i")
 
 [node name="test" type="Node2D" unique_id=683117807]
 
-[node name="spike" parent="." unique_id=1112720118 instance=ExtResource("1_3ytr0")]
-position = Vector2(-46, 100)
-
-[node name="spike2" parent="." unique_id=644063734 instance=ExtResource("1_3ytr0")]
-position = Vector2(-64, 100)
-
-[node name="spike3" parent="." unique_id=681192043 instance=ExtResource("1_3ytr0")]
-position = Vector2(-55, 100)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=284681123]
 position = Vector2(0, 4)
 zoom = Vector2(3, 3)
 
 [node name="player" parent="." unique_id=621912255 node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_kguai")]
-position = Vector2(-64, 58)
+position = Vector2(41, 87)
 spawn_point = NodePath("../spawn_point")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=24740951]
-tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAATAA0AAAAAAAAAAAASAA0AAAAAAAAAAAARAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAADAA0AAAAAAAAAAAACAA0AAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD+/w0AAAAAAAAAAAD9/w0AAAAAAAAAAAD8/w0AAAAAAAAAAAD7/w0AAAAAAAAAAAD6/w0AAAAAAAAAAAD5/w0AAAAAAAAAAAD4/w0AAAAAAAAAAAD3/w0AAAAAAAAAAAD2/w0AAAAAAAAAAAD1/w0AAAAAAAAAAAD0/w0AAAAAAAAAAADz/w0AAAAAAAAAAADy/w0AAAAAAAAAAADx/w0AAAAAAAAAAADw/w0AAAAAAAAAAADv/w0AAAAAAAAAAADu/w0AAAAAAAAAAADt/w0AAAAAAAAAAADs/w0AAAAAAAAAAADr/w0AAAAAAAAAAADq/w0AAAAAAAAAAADp/w0AAAAAAAAAAADo/w0AAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAATAA0AAAAAAAAAAAASAA0AAAAAAAAAAAARAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAADAA0AAAAAAAAAAAACAA0AAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD+/w0AAAAAAAAAAAD9/w0AAAAAAAAAAAD8/w0AAAAAAAAAAAD7/w0AAAAAAAAAAAD6/w0AAAAAAAAAAAD5/w0AAAAAAAAAAAD4/w0AAAAAAAAAAAD3/w0AAAAAAAAAAAD2/w0AAAAAAAAAAAD1/w0AAAAAAAAAAAD0/w0AAAAAAAAAAADz/w0AAAAAAAAAAADy/w0AAAAAAAAAAADx/w0AAAAAAAAAAADw/w0AAAAAAAAAAADv/w0AAAAAAAAAAADu/w0AAAAAAAAAAADt/w0AAAAAAAAAAADs/w0AAAAAAAAAAADr/w0AAAAAAAAAAADq/w0AAAAAAAAAAADp/w0AAAAAAAAAAADo/w0AAAAAAAAAAAAXAAwAAAAAAAAAAAAXAAsAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAYAAAAAAAAAAAAXAAUAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAMAAAAAAAAAAAAXAAIAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAXAP//AAAAAAAAAAAXAP7/AAAAAAAAAADo/wwAAAAAAAAAAADo/wsAAAAAAAAAAADo/woAAAAAAAAAAADo/wkAAAAAAAAAAADo/wgAAAAAAAAAAADo/wcAAAAAAAAAAADo/wYAAAAAAAAAAADo/wUAAAAAAAAAAADo/wQAAAAAAAAAAADo/wMAAAAAAAAAAADo/wIAAAAAAAAAAADo/wEAAAAAAAAAAADo/wAAAAAAAAAAAADo////AAAAAAAAAADo//7/AAAAAAAAAADo//3/AAAAAAAAAADo//z/AAAAAAAAAADy/wwAAAAAAAAAAADz/wwAAAAAAAAAAAD0/wwAAAAAAAAAAAD1/wwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_m686n")
 
 [node name="spawn_point" type="Marker2D" parent="." unique_id=810920023]
-position = Vector2(-182, 87)
+position = Vector2(78, 89)
 
-[node name="saw" parent="." unique_id=1689573863 instance=ExtResource("4_ld35i")]
-position = Vector2(-97, 98)
+[node name="npc" parent="." unique_id=1313742742 node_paths=PackedStringArray("player") instance=ExtResource("3_3ytr0")]
+position = Vector2(66, 92)
+behavior = 2
+player = NodePath("../player")
+
+[node name="cannon" parent="." unique_id=1680974602 instance=ExtResource("4_ld35i")]
+position = Vector2(116, 100)
+projectile_scene = ExtResource("5_m686n")
+fire_interval = 0.5
+fire_direction = Vector2(-1, 0)

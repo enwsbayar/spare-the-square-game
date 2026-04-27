@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cannon001"]
+
+[ext_resource type="Script" path="res://Scripts/cannon.gd" id="1_cannon"]
+[ext_resource type="Texture2D" path="res://Assets/cannon.png" id="2_cannon"]
+
+[node name="cannon" type="Node2D"]
+script = ExtResource("1_cannon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cannon")

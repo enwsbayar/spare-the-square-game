@@ -134,9 +134,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wfw5h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18w7d")
 }],
 "loop": false,
 "name": &"jump",
@@ -151,7 +148,7 @@ script = ExtResource("1_evlwd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1896357236]
 sprite_frames = SubResource("SpriteFrames_agd2o")
-animation = &"death"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=119651560]
 shape = SubResource("RectangleShape2D_evlwd")
