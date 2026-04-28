@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 		die()
 
 	move_and_slide()
+	_check_trampoline()
 	_update_animation()
 
 
@@ -83,6 +84,18 @@ func born() -> void:
 func _on_born_finished() -> void:
 	dead = false
 	anim.play("idle")
+
+
+func _check_trampoline() -> void:
+	if not is_on_floor():
+		return
+	for i in get_slide_collision_count():
+		var col := get_slide_collision(i)
+		var collider := col.get_collider()
+		if collider and collider.is_in_group("trampoline"):
+			velocity.y = collider.bounce_force
+			collider.bounce()
+			break
 
 
 func _teleport_to_spawn() -> void:

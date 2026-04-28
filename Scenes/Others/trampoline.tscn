@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b8nc00xlm1kx0"]
+
+[ext_resource type="Script" path="res://Scripts/trampoline.gd" id="1_trp01"]
+[ext_resource type="Texture2D" uid="uid://cdlxlgv16k0ov" path="res://Assets/trambolin.png" id="2_trp02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0"]
+atlas = ExtResource("2_trp02")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1"]
+atlas = ExtResource("2_trp02")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2"]
+atlas = ExtResource("2_trp02")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trp"]
+size = Vector2(8, 2)
+
+[node name="trampoline" type="StaticBody2D" unique_id=1192813902]
+script = ExtResource("1_trp01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1255506410]
+sprite_frames = SubResource("SpriteFrames_trp")
+animation = &"bounce"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1186102380]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_trp")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bsn5704pp1qb1"]
+
+[ext_resource type="Script" path="res://Scripts/teleport.gd" id="1_tel01"]
+[ext_resource type="Texture2D" uid="uid://b7y3ci2lsgtxg" path="res://Assets/teleport.png" id="2_tel02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tel01"]
+size = Vector2(6, 6)
+
+[node name="teleport" type="Area2D" unique_id=2118282687]
+script = ExtResource("1_tel01")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1288546027]
+texture = ExtResource("2_tel02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1910399132]
+shape = SubResource("RectangleShape2D_tel01")
