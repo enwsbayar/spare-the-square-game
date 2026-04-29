@@ -43,7 +43,7 @@ tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAA
 tile_set = SubResource("TileSet_m686n")
 
 [node name="spawn_point" type="Marker2D" parent="." unique_id=810920023]
-position = Vector2(-175, 1)
+position = Vector2(-172, 4)
 
 [node name="portal" parent="." unique_id=280529490 instance=ExtResource("3_kuytm")]
 position = Vector2(168, 4)
@@ -144,7 +144,6 @@ fire_interval = 1.2
 fire_direction = Vector2(0, 1)
 
 [node name="MissionText" type="CanvasLayer" parent="." unique_id=726619864]
-visible = false
 
 [node name="CenterContainer" type="CenterContainer" parent="MissionText" unique_id=1933480297]
 anchors_preset = 15
