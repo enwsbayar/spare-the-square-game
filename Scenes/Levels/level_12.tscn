@@ -1,0 +1,1068 @@
+[gd_scene format=4 uid="uid://cdpfcs2a2s0ud"]
+
+[ext_resource type="Script" uid="uid://c2f0fgfycl0to" path="res://Scripts/level_12.gd" id="1_7x0qs"]
+[ext_resource type="Texture2D" uid="uid://dl8d1cvm60yps" path="res://Assets/black_tile.png" id="1_udswc"]
+[ext_resource type="PackedScene" uid="uid://tu0rmesp4u8w" path="res://Scenes/Others/portal.tscn" id="2_w2kd6"]
+[ext_resource type="PackedScene" uid="uid://daac5ssp04i8b" path="res://Scenes/Others/player.tscn" id="3_7x0qs"]
+[ext_resource type="FontFile" uid="uid://br2ax5etbni52" path="res://Fonts/PressStart2P-Regular.ttf" id="4_o3onl"]
+[ext_resource type="PackedScene" uid="uid://v2tnajj407ct" path="res://Scenes/Others/npc.tscn" id="5_o3onl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ld35i"]
+texture = ExtResource("1_udswc")
+texture_region_size = Vector2i(8, 8)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_m686n"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ld35i")
+
+[node name="level_12" type="Node2D" unique_id=683117807 node_paths=PackedStringArray("portal")]
+script = ExtResource("1_7x0qs")
+portal = NodePath("portal")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=284681123]
+position = Vector2(0, 4)
+zoom = Vector2(3, 3)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=24740951]
+tile_map_data = PackedByteArray("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AADy/wcAAAAAAAAAAADx/wcAAAAAAAAAAADw/wcAAAAAAAAAAADv/wcAAAAAAAAAAADu/wcAAAAAAAAAAADu/wgAAAAAAAAAAADt/wgAAAAAAAAAAADs/wgAAAAAAAAAAADs/wkAAAAAAAAAAADr/wkAAAAAAAAAAADr/woAAAAAAAAAAADq/woAAAAAAAAAAADp/woAAAAAAAAAAADp/wsAAAAAAAAAAADp/wwAAAAAAAAAAADq/wwAAAAAAAAAAADq/wsAAAAAAAAAAADr/wsAAAAAAAAAAADr/wwAAAAAAAAAAADs/wwAAAAAAAAAAADs/wsAAAAAAAAAAADs/woAAAAAAAAAAADt/woAAAAAAAAAAADt/wkAAAAAAAAAAADu/wkAAAAAAAAAAADu/woAAAAAAAAAAADu/wsAAAAAAAAAAADt/wsAAAAAAAAAAADt/wwAAAAAAAAAAADu/wwAAAAAAAAAAADv/wwAAAAAAAAAAADv/wsAAAAAAAAAAADv/woAAAAAAAAAAADv/wkAAAAAAAAAAADv/wgAAAAAAAAAAADw/wgAAAAAAAAAAADw/wkAAAAAAAAAAADw/woAAAAAAAAAAADw/wsAAAAAAAAAAADw/wwAAAAAAAAAAADx/wwAAAAAAAAAAADx/wsAAAAAAAAAAADx/woAAAAAAAAAAADx/wkAAAAAAAAAAADx/wgAAAAAAAAAAADy/wgAAAAAAAAAAADy/wkAAAAAAAAAAADy/woAAAAAAAAAAADy/wsAAAAAAAAAAADy/wwAAAAAAAAAAADz/wwAAAAAAAAAAADz/wsAAAAAAAAAAADz/woAAAAAAAAAAADz/wkAAAAAAAAAAADz/wgAAAAAAAAAAAD0/wgAAAAAAAAAAAD0/wkAAAAAAAAAAAD0/woAAAAAAAAAAAD0/wsAAAAAAAAAAAD0/wwAAAAAAAAAAAD1/wwAAAAAAAAAAAD1/wsAAAAAAAAAAAD1/woAAAAAAAAAAAD1/wkAAAAAAAAAAAD1/wgAAAAAAAAAAAD2/wkAAAAAAAAAAAD2/woAAAAAAAAAAAD2/wsAAAAAAAAAAAD2/wwAAAAAAAAAAAD3/wwAAAAAAAAAAAD3/wsAAAAAAAAAAAD3/woAAAAAAAAAAAD3/wkAAAAAAAAAAAD4/wkAAAAAAAAAAAD4/woAAAAAAAAAAAD4/wsAAAAAAAAAAAD4/wwAAAAAAAAAAAD5/wwAAAAAAAAAAAD5/wsAAAAAAAAAAAD6/wsAAAAAAAAAAAD6/woAAAAAAAAAAAD6/wkAAAAAAAAAAAD7/wkAAAAAAAAAAAD7/woAAAAAAAAAAAD7/wsAAAAAAAAAAAD7/wwAAAAAAAAAAAD6/wwAAAAAAAAAAAD8/wwAAAAAAAAAAAD8/wsAAAAAAAAAAAD8/woAAAAAAAAAAAD8/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD9/woAAAAAAAAAAAD9/wsAAAAAAAAAAAD9/wwAAAAAAAAAAAD+/wwAAAAAAAAAAAD+/wsAAAAAAAAAAAD+/woAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAABAAoAAAAAAAAAAAABAAkAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAACAAwAAAAAAAAAAAABAAwAAAAAAAAAAAADAAwAAAAAAAAAAAADAAsAAAAAAAAAAAADAAoAAAAAAAAAAAADAAkAAAAAAAAAAAADAAgAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAA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AADy//X/AAAAAAAAAADz//X/AAAAAAAAAADz//b/AAAAAAAAAADz//f/AAAAAAAAAADz//j/AAAAAAAAAAD0//j/AAAAAAAAAAD0//f/AAAAAAAAAAD0//b/AAAAAAAAAAD0//X/AAAAAAAAAAD1//b/AAAAAAAAAAD1//f/AAAAAAAAAAD2//f/AAAAAAAAAAD2//b/AAAAAAAAAAD2//X/AAAAAAAAAAD2//T/AAAAAAAAAAD3//T/AAAAAAAAAAD3//X/AAAAAAAAAAD3//b/AAAAAAAAAAD3//f/AAAAAAAAAAD4//b/AAAAAAAAAAD4//X/AAAAAAAAAAD4//T/AAAAAAAAAAD5//T/AAAAAAAAAAD5//X/AAAAAAAAAAD6//T/AAAAAAAAAAD7//T/AAAAAAAAAAD8//T/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAD///T/AAAAAAAAAAD///X/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPT/AAAAAAAAAAABAPT/AAAAAAAAAAABAPX/AAAAAAAAAAABAPb/AAAAAAAAAAACAPb/AAAAAAAAAAACAPX/AAAAAAAAAAACAPT/AAAAAAAAAAADAPT/AAAAAAAAAAADAPX/AAAAAAAAAAADAPb/AAAAAAAAAAAEAPb/AAAAAAAAAAAEAPX/AAAAAAAAAAAEAPT/AAAAAAAAAAAFAPT/AAAAAAAAAAAFAPX/AAAAAAAAAAAFAPb/AAAAAAAAAAAFAPf/AAAAAAAAAAAEAPf/AAAAAAAAAAAGAPf/AAAAAAAAAAAGAPb/AAAAAAAAAAAGAPX/AAAAAAAAAAAGAPT/AAAAAAAAAAAHAPT/AAAAAAAAAAAHAPX/AAAAAAAAAAAHAPb/AAAAAAAAAAAHAPf/AAAAAAAAAAAIAPb/AAAAAAAAAAAIAPX/AAAAAAAAAAAIAPT/AAAAAAAAAAAJAPT/AAAAAAAAAAAJAPX/AAAAAAAAAAAJAPb/AAAAAAAAAAAKAPb/AAAAAAAAAAAKAPX/AAAAAAAAAAAKAPT/AAAAAAAAAAALAPT/AAAAAAAAAAALAPX/AAAAAAAAAAALAPb/AAAAAAAAAAAMAPb/AAAAAAAAAAAMAPX/AAAAAAAAAAAMAPT/AAAAAAAAAAANAPT/AAAAAAAAAAANAPX/AAAAAAAAAAAOAPX/AAAAAAAAAAAOAPT/AAAAAAAAAAAPAPT/AAAAAAAAAAAQAPT/AAAAAAAAAAARAPT/AAAAAAAAAAASAPT/AAAAAAAAAAATAPT/AAAAAAAAAAATAPX/AAAAAAAAAAAUAPX/AAAAAAAAAAAUAPT/AAAAAAAAAAAVAPT/AAAAAAAAAAAWAPT/AAAAAAAAAADp/wEAAAAAAAAAAADq/wEAAAAAAAAAAADr/wEAAAAAAAAAAADs/wEAAAAAAAAAAADt/wEAAAAAAAAAAADu/wEAAAAAAAAAAADv/wEAAAAAAAAAAADw/wEAAAAAAAAAAADx/wEAAAAAAAAAAADy/wEAAAAAAAAAAADz/wEAAAAAAAAAAAD0/wEAAAAAAAAAAAD1/wEAAAAAAAAAAAD2/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAADp//7/AAAAAAAAAADq//7/AAAAAAAAAADr//7/AAAAAAAAAADs//7/AAAAAAAAAADt//7/AAAAAAAAAADu//7/AAAAAAAAAADv//7/AAAAAAAAAADw//7/AAAAAAAAAADx//7/AAAAAAAAAADy//7/AAAAAAAAAADz//7/AAAAAAAAAAD0//7/AAAAAAAAAAD1//7/AAAAAAAAAAD2//7/AAAAAAAAAAD3//7/AAAAAAAAAAD4//7/AAAAAAAAAAD5//7/AAAAAAAAAAD6//7/AAAAAAAAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAAMAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAAQAP7/AAAAAAAAAAARAP7/AAAAAAAAAAASAP7/AAAAAAAAAAATAP7/AAAAAAAAAAAUAP7/AAAAAAAAAAAVAP7/AAAAAAAAAAAWAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_m686n")
+
+[node name="spawn_point" type="Marker2D" parent="." unique_id=810920023]
+position = Vector2(-165, -1)
+
+[node name="portal" parent="." unique_id=280529490 instance=ExtResource("2_w2kd6")]
+position = Vector2(176, 0)
+scale = Vector2(2, 2)
+
+[node name="player" parent="." unique_id=621912255 node_paths=PackedStringArray("spawn_point") instance=ExtResource("3_7x0qs")]
+position = Vector2(-176, -136)
+spawn_point = NodePath("../spawn_point")
+
+[node name="NPCS" type="Node2D" parent="." unique_id=884084151]
+
+[node name="npc0" parent="NPCS" unique_id=1313742742 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-160, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc1" parent="NPCS" unique_id=1709476055 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-127, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc2" parent="NPCS" unique_id=1518710017 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-135, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc3" parent="NPCS" unique_id=1206284272 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-151, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc4" parent="NPCS" unique_id=1098669788 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-143, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc5" parent="NPCS" unique_id=1534109692 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-160, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc6" parent="NPCS" unique_id=1910734485 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-127, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc7" parent="NPCS" unique_id=830756661 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-135, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc8" parent="NPCS" unique_id=993930732 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-151, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc9" parent="NPCS" unique_id=533565542 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-143, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc10" parent="NPCS" unique_id=2122610766 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-118, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc11" parent="NPCS" unique_id=781231741 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-85, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc12" parent="NPCS" unique_id=816140498 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-93, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc13" parent="NPCS" unique_id=1412721787 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-109, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc14" parent="NPCS" unique_id=2049575472 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-101, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc15" parent="NPCS" unique_id=1487747976 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-118, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc16" parent="NPCS" unique_id=1196234892 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-85, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc17" parent="NPCS" unique_id=121844784 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-93, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc18" parent="NPCS" unique_id=604246152 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-109, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc19" parent="NPCS" unique_id=1926311978 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-101, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc20" parent="NPCS" unique_id=399675752 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-77, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc21" parent="NPCS" unique_id=601543975 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-44, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc22" parent="NPCS" unique_id=71269710 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc23" parent="NPCS" unique_id=1288992090 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-68, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc24" parent="NPCS" unique_id=1769758353 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-60, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc25" parent="NPCS" unique_id=1475733674 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-77, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc26" parent="NPCS" unique_id=443353678 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-44, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc27" parent="NPCS" unique_id=247531570 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc28" parent="NPCS" unique_id=1843000450 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-68, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc29" parent="NPCS" unique_id=1616425076 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-60, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc30" parent="NPCS" unique_id=1922495223 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-35, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc31" parent="NPCS" unique_id=343414800 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-2, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc32" parent="NPCS" unique_id=1585668400 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc33" parent="NPCS" unique_id=1706688115 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc34" parent="NPCS" unique_id=871403102 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc35" parent="NPCS" unique_id=571811882 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-35, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc36" parent="NPCS" unique_id=331551595 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-2, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc37" parent="NPCS" unique_id=15500378 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc38" parent="NPCS" unique_id=955102679 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc39" parent="NPCS" unique_id=1216585222 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc160" parent="NPCS" unique_id=130482083 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-44, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc161" parent="NPCS" unique_id=1361263358 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc162" parent="NPCS" unique_id=211022551 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-44, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc163" parent="NPCS" unique_id=752910037 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc164" parent="NPCS" unique_id=679649580 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-35, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc165" parent="NPCS" unique_id=1419649843 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc166" parent="NPCS" unique_id=1379154251 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc167" parent="NPCS" unique_id=613520228 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc168" parent="NPCS" unique_id=827213883 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-35, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc169" parent="NPCS" unique_id=1793925201 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc170" parent="NPCS" unique_id=1041609800 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc171" parent="NPCS" unique_id=1079287452 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc40" parent="NPCS" unique_id=520197244 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(6, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc41" parent="NPCS" unique_id=1670779393 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(39, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc42" parent="NPCS" unique_id=489026070 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(31, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc43" parent="NPCS" unique_id=756121342 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(15, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc44" parent="NPCS" unique_id=285965893 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(23, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc45" parent="NPCS" unique_id=908067267 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(6, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc46" parent="NPCS" unique_id=1801071039 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(39, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc47" parent="NPCS" unique_id=1331419705 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(31, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc48" parent="NPCS" unique_id=1345593291 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(15, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc49" parent="NPCS" unique_id=886541587 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(23, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc50" parent="NPCS" unique_id=1473325662 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(48, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc51" parent="NPCS" unique_id=483816352 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(81, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc52" parent="NPCS" unique_id=1525393379 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(73, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc53" parent="NPCS" unique_id=1717321825 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(57, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc54" parent="NPCS" unique_id=285329001 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(65, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc55" parent="NPCS" unique_id=7672661 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(48, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc56" parent="NPCS" unique_id=1933749749 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(81, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc57" parent="NPCS" unique_id=1425673463 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(73, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc58" parent="NPCS" unique_id=2002526105 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(57, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc59" parent="NPCS" unique_id=504412236 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(65, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc60" parent="NPCS" unique_id=1258578182 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(89, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc61" parent="NPCS" unique_id=645041263 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(122, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc62" parent="NPCS" unique_id=569470674 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc63" parent="NPCS" unique_id=722368161 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(98, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc64" parent="NPCS" unique_id=1790132971 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(106, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc65" parent="NPCS" unique_id=831771122 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(89, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc66" parent="NPCS" unique_id=396576081 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(122, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc67" parent="NPCS" unique_id=417577527 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc68" parent="NPCS" unique_id=1811967998 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(98, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc69" parent="NPCS" unique_id=513909599 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(106, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc70" parent="NPCS" unique_id=895047043 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(131, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc71" parent="NPCS" unique_id=2104353684 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(164, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc72" parent="NPCS" unique_id=839497619 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc73" parent="NPCS" unique_id=754695271 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc74" parent="NPCS" unique_id=599504034 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, -31)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc75" parent="NPCS" unique_id=244213698 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(131, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc76" parent="NPCS" unique_id=1440920319 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(164, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc77" parent="NPCS" unique_id=439755673 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc78" parent="NPCS" unique_id=1789117779 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc79" parent="NPCS" unique_id=2047727686 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, -39)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc172" parent="NPCS" unique_id=1437224102 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(122, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc173" parent="NPCS" unique_id=45572743 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc174" parent="NPCS" unique_id=1464584632 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(122, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc175" parent="NPCS" unique_id=599762444 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc176" parent="NPCS" unique_id=1850835270 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(131, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc177" parent="NPCS" unique_id=18176119 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(164, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc178" parent="NPCS" unique_id=653520373 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc179" parent="NPCS" unique_id=344202110 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc180" parent="NPCS" unique_id=1351530990 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, -47)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc181" parent="NPCS" unique_id=1750538748 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(131, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc182" parent="NPCS" unique_id=1432065805 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(164, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc183" parent="NPCS" unique_id=1243428770 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc184" parent="NPCS" unique_id=1088054580 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc185" parent="NPCS" unique_id=368851531 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, -55)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc80" parent="NPCS" unique_id=258717229 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-168, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc81" parent="NPCS" unique_id=1698042864 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-135, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc82" parent="NPCS" unique_id=293315166 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-143, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc83" parent="NPCS" unique_id=510005408 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-159, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc84" parent="NPCS" unique_id=363169085 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-151, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc85" parent="NPCS" unique_id=80844026 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-168, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc86" parent="NPCS" unique_id=1036400329 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-135, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc87" parent="NPCS" unique_id=1124654098 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-143, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc88" parent="NPCS" unique_id=449966221 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-159, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc89" parent="NPCS" unique_id=1024120929 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-151, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc90" parent="NPCS" unique_id=1261550607 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-126, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc91" parent="NPCS" unique_id=250023342 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-93, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc92" parent="NPCS" unique_id=574991040 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-101, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc93" parent="NPCS" unique_id=973720219 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-117, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc94" parent="NPCS" unique_id=1604707429 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-109, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc95" parent="NPCS" unique_id=593572253 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-126, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc96" parent="NPCS" unique_id=2059425300 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-93, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc97" parent="NPCS" unique_id=2049510248 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-101, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc98" parent="NPCS" unique_id=1110312801 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-117, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc99" parent="NPCS" unique_id=1854523991 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-109, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc100" parent="NPCS" unique_id=25648640 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-85, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc101" parent="NPCS" unique_id=711293763 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc102" parent="NPCS" unique_id=1223226539 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-60, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc103" parent="NPCS" unique_id=753510517 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-76, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc104" parent="NPCS" unique_id=1621893965 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-68, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc105" parent="NPCS" unique_id=452011643 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-85, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc106" parent="NPCS" unique_id=328412813 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-52, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc107" parent="NPCS" unique_id=1701881859 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-60, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc108" parent="NPCS" unique_id=2074234063 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-76, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc109" parent="NPCS" unique_id=804101261 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-68, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc110" parent="NPCS" unique_id=851068117 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-43, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc111" parent="NPCS" unique_id=2000481746 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc112" parent="NPCS" unique_id=334367732 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc113" parent="NPCS" unique_id=1084635617 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-34, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc114" parent="NPCS" unique_id=971416795 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc115" parent="NPCS" unique_id=654865586 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-43, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc116" parent="NPCS" unique_id=508194195 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-10, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc117" parent="NPCS" unique_id=1220502844 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-18, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc118" parent="NPCS" unique_id=818770728 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-34, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc119" parent="NPCS" unique_id=1482150133 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-26, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc120" parent="NPCS" unique_id=1648225494 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-2, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc121" parent="NPCS" unique_id=272719018 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(31, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc122" parent="NPCS" unique_id=1560767776 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(23, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc123" parent="NPCS" unique_id=1571990566 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(7, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc124" parent="NPCS" unique_id=1821503880 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(15, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc125" parent="NPCS" unique_id=1180109837 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(-2, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc126" parent="NPCS" unique_id=511642887 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(31, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc127" parent="NPCS" unique_id=700433401 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(23, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc128" parent="NPCS" unique_id=1126256720 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(7, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc129" parent="NPCS" unique_id=1850132849 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(15, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc130" parent="NPCS" unique_id=1379535112 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(40, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc131" parent="NPCS" unique_id=1487201297 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(73, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc132" parent="NPCS" unique_id=682748222 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(65, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc133" parent="NPCS" unique_id=1868302283 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(49, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc134" parent="NPCS" unique_id=709587568 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(57, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc135" parent="NPCS" unique_id=1840385088 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(40, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc136" parent="NPCS" unique_id=1996361510 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(73, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc137" parent="NPCS" unique_id=1725416041 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(65, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc138" parent="NPCS" unique_id=1383282269 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(49, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc139" parent="NPCS" unique_id=1219654889 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(57, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc140" parent="NPCS" unique_id=151298076 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(81, 42)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc141" parent="NPCS" unique_id=1262111457 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc142" parent="NPCS" unique_id=1646667404 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(106, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc143" parent="NPCS" unique_id=887196699 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(90, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc144" parent="NPCS" unique_id=1345573669 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(98, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc145" parent="NPCS" unique_id=386172075 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(81, 34)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc146" parent="NPCS" unique_id=1917129269 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc147" parent="NPCS" unique_id=1266507948 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(106, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc148" parent="NPCS" unique_id=2096999116 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(90, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc149" parent="NPCS" unique_id=340076257 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(98, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc150" parent="NPCS" unique_id=1596931622 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(123, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc151" parent="NPCS" unique_id=1593631495 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc152" parent="NPCS" unique_id=880013057 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc153" parent="NPCS" unique_id=1620611992 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(132, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc154" parent="NPCS" unique_id=1132631436 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, 37)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc155" parent="NPCS" unique_id=1752815517 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(123, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc156" parent="NPCS" unique_id=51318991 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc157" parent="NPCS" unique_id=659326710 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc158" parent="NPCS" unique_id=1380799499 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(132, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc159" parent="NPCS" unique_id=2060939413 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, 29)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc186" parent="NPCS" unique_id=1224299809 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc187" parent="NPCS" unique_id=1385537776 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(114, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc188" parent="NPCS" unique_id=222926929 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(123, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc189" parent="NPCS" unique_id=1614475818 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc190" parent="NPCS" unique_id=688502077 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc191" parent="NPCS" unique_id=1346455682 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(132, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc192" parent="NPCS" unique_id=300471653 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, 54)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc193" parent="NPCS" unique_id=29728780 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(123, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc194" parent="NPCS" unique_id=2091156801 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(156, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc195" parent="NPCS" unique_id=1756433932 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(148, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc196" parent="NPCS" unique_id=1940347152 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(132, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="npc197" parent="NPCS" unique_id=559481799 node_paths=PackedStringArray("player") instance=ExtResource("5_o3onl")]
+position = Vector2(140, 46)
+behavior = 1
+player = NodePath("../../player")
+
+[node name="Platforms" type="Node2D" parent="." unique_id=37737578]
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1240090968]
+
+[node name="Spikes" type="Node2D" parent="." unique_id=346955142]
+
+[node name="Cannons" type="Node2D" parent="." unique_id=2085681461]
+
+[node name="Saws" type="Node2D" parent="." unique_id=434330943]
+
+[node name="Trampolines" type="Node2D" parent="." unique_id=1351607064]
+
+[node name="Teleports" type="Node2D" parent="." unique_id=1170027578]
+
+[node name="MissionText" type="CanvasLayer" parent="." unique_id=726619864]
+offset = Vector2(0, 276.105)
+transform = Transform2D(1, 0, 0, 1, 0, 276.105)
+
+[node name="CenterContainer" type="CenterContainer" parent="MissionText" unique_id=1933480297]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_label" type="Label" parent="MissionText/CenterContainer" unique_id=2018204565]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_o3onl")
+theme_override_font_sizes/font_size = 40
+text = "EVERYWHERE IS SQUARE"
+horizontal_alignment = 1
+vertical_alignment = 1

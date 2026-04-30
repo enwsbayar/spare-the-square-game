@@ -31,15 +31,16 @@ func _on_body_entered(body: Node) -> void:
 	var current := get_tree().current_scene.scene_file_path
 	var file_name := current.get_file().get_basename()
 	var parts := file_name.split("_")
-	var next_num := int(parts[-1]) + 1
-	var next_scene := "res://Scenes/Levels/level_%d.tscn" % next_num
+	var current_num := int(parts[-1])
+	var next_scene := "res://Scenes/Levels/level_%d.tscn" % (current_num + 1)
 
-	if not ResourceLoader.exists(next_scene):
-		return
+	GameData.complete_level(current_num)
+
+	var target := next_scene if ResourceLoader.exists(next_scene) else "res://Scenes/Menus/main_menu.tscn"
 
 	body.respawn = false
 	body.die()
 	body.anim.animation_finished.connect(
-		func(): get_tree().change_scene_to_file(next_scene),
+		func(): get_tree().change_scene_to_file(target),
 		CONNECT_ONE_SHOT
 	)

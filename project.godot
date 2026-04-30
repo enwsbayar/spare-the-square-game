@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="spare_the_square"
-run/main_scene="uid://b2n4xpbrhrp0l"
+run/main_scene="res://Scenes/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 run/low_processor_mode=true
 run/low_processor_mode_sleep_usec=8000
@@ -55,3 +55,7 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.3840482, 0.3793558, 0.39144677, 1)
+
+[autoload]
+
+GameData="*res://Scripts/game_data.gd"

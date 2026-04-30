@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cannon001"]
 
-[ext_resource type="Script" path="res://Scripts/cannon.gd" id="1_cannon"]
-[ext_resource type="Texture2D" path="res://Assets/cannon.png" id="2_cannon"]
+[ext_resource type="Script" uid="uid://c3t58u6t5ctl8" path="res://Scripts/cannon.gd" id="1_cannon"]
+[ext_resource type="Texture2D" uid="uid://ctih54pfhd1qv" path="res://Assets/cannon.png" id="2_cannon"]
 
-[node name="cannon" type="Node2D"]
+[node name="cannon" type="Node2D" unique_id=582941849]
 script = ExtResource("1_cannon")
+fire_interval = 0.5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1572489447]
 texture = ExtResource("2_cannon")

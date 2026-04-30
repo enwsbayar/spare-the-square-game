@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b5jitwijoem53"]
+
+[ext_resource type="Script" uid="uid://ccaosach4p56w" path="res://Scripts/settings.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://br2ax5etbni52" path="res://Fonts/PressStart2P-Regular.ttf" id="2_font"]
+
+[node name="Settings" type="Control" unique_id=1343121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=457217449]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.07, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=778949090]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=1467425088]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=1809779254]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.9, 0.35, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/VBox" unique_id=1816774025]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Center/VBox" unique_id=1019725854]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="FullscreenLabel" type="Label" parent="Center/VBox/FullscreenRow" unique_id=576900343]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "FULLSCREEN"
+
+[node name="FullscreenButton" type="CheckButton" parent="Center/VBox/FullscreenRow" unique_id=1985854798]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+
+[node name="Spacer2" type="Control" parent="Center/VBox" unique_id=543694475]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Center/VBox" unique_id=803581875]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.7, 0.3, 1)
+theme_override_colors/font_hover_color = Color(0.25, 0.9, 0.35, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "< BACK"
+flat = true
+
+[connection signal="toggled" from="Center/VBox/FullscreenRow/FullscreenButton" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Center/VBox/BackButton" to="." method="_on_back_pressed"]
