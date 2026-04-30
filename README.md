@@ -1,5 +1,7 @@
 # Spare the Square
 
+![Spare the Square](img/img.png)
+
 A 2D pixel-art platformer made with Godot 4.6.
 
 ## Gameplay

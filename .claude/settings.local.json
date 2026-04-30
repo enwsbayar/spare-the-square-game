@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf Builds/)",
+      "Bash(rm -f spare_the_square.apple-touch-icon.png spare_the_square.apple-touch-icon.png.import spare_the_square.audio.position.worklet.js spare_the_square.audio.worklet.js spare_the_square.console.exe spare_the_square.exe spare_the_square.html spare_the_square.icon.png spare_the_square.icon.png.import spare_the_square.js spare_the_square.pck spare_the_square.png spare_the_square.png.import spare_the_square.wasm)"
+    ]
+  }
+}
