@@ -26,8 +26,19 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ld35i")
 
-[node name="level_10" type="Node2D" unique_id=683117807]
+[node name="level_10" type="Node2D" unique_id=683117807 node_paths=PackedStringArray("button1", "button2", "button3", "button4", "button5", "platform_1", "platform_2", "platform_3", "platform_4", "platform_5", "portal")]
 script = ExtResource("1_2doy4")
+button1 = NodePath("Buttons/button1")
+button2 = NodePath("Buttons/button2")
+button3 = NodePath("Buttons/button3")
+button4 = NodePath("Buttons/button4")
+button5 = NodePath("Buttons/button5")
+platform_1 = NodePath("Platforms/platform_1")
+platform_2 = NodePath("Platforms/platform_2")
+platform_3 = NodePath("Platforms/platform_3")
+platform_4 = NodePath("Platforms/platform_4")
+platform_5 = NodePath("Platforms/platform_5")
+portal = NodePath("portal")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=284681123]
 position = Vector2(0, 4)
@@ -59,22 +70,27 @@ player = NodePath("../../player")
 [node name="platform_1" parent="Platforms" unique_id=1742261040 instance=ExtResource("6_cqglu")]
 position = Vector2(-124, 29)
 scale = Vector2(3, 3)
+move_duration = 0.5
 
 [node name="platform_2" parent="Platforms" unique_id=2041985696 instance=ExtResource("6_cqglu")]
 position = Vector2(-76.00001, 29)
 scale = Vector2(3, 3)
+move_duration = 0.5
 
 [node name="platform_3" parent="Platforms" unique_id=1941655607 instance=ExtResource("6_cqglu")]
 position = Vector2(-20, 29)
 scale = Vector2(3, 3)
+move_duration = 0.5
 
 [node name="platform_4" parent="Platforms" unique_id=1237441453 instance=ExtResource("6_cqglu")]
 position = Vector2(36, 29)
 scale = Vector2(3, 3)
+move_duration = 0.5
 
 [node name="platform_5" parent="Platforms" unique_id=981962008 instance=ExtResource("6_cqglu")]
 position = Vector2(92, 29)
 scale = Vector2(3, 3)
+move_duration = 0.5
 
 [node name="Buttons" type="Node2D" parent="." unique_id=1240090968]
 
@@ -104,6 +120,9 @@ rotation = 1.5707964
 position = Vector2(36, 4)
 rotation = -3.1415925
 
+[node name="spike2" parent="Spikes" unique_id=1531406654 instance=ExtResource("8_whtgd")]
+position = Vector2(123, 100)
+
 [node name="Cannons" type="Node2D" parent="." unique_id=2085681461]
 
 [node name="cannon" parent="Cannons" unique_id=507213267 instance=ExtResource("9_0jcte")]
@@ -126,7 +145,8 @@ position = Vector2(92, 22)
 [node name="Teleports" type="Node2D" parent="." unique_id=1170027578]
 
 [node name="MissionText" type="CanvasLayer" parent="." unique_id=726619864]
-visible = false
+offset = Vector2(0, -100)
+transform = Transform2D(1, 0, 0, 1, 0, -100)
 
 [node name="CenterContainer" type="CenterContainer" parent="MissionText" unique_id=1933480297]
 anchors_preset = 15

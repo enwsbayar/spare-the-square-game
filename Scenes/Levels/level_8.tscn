@@ -62,10 +62,10 @@ player = NodePath("../player")
 position = Vector2(-4, 36)
 
 [node name="Label" type="Label" parent="button_accept" unique_id=685603003]
-offset_left = 10.0
-offset_top = -16.0
-offset_right = 40.0
-offset_bottom = -11.0
+offset_left = 11.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = -14.0
 rotation = 1.5707964
 theme_override_fonts/font = ExtResource("11_wxeqx")
 theme_override_font_sizes/font_size = 5
@@ -76,10 +76,10 @@ position = Vector2(-28, 36)
 rotation = 3.1415927
 
 [node name="Label" type="Label" parent="button_refuse" unique_id=1675746697]
-offset_left = 9.999998
-offset_top = -13.000001
-offset_right = 40.0
-offset_bottom = -8.000001
+offset_left = 9.999997
+offset_top = -11.0
+offset_right = 39.999996
+offset_bottom = -6.0
 rotation = 1.5707964
 theme_override_fonts/font = ExtResource("11_wxeqx")
 theme_override_font_sizes/font_size = 5

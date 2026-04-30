@@ -54,24 +54,24 @@ position = Vector2(-16, 100)
 rotation = 1.5707964
 
 [node name="Label" type="Label" parent="spare_button" unique_id=1671097833]
-offset_left = -8.0
+offset_left = -9.000001
 offset_top = 12.0
-offset_right = 17.0
-offset_bottom = 18.0
+offset_right = 15.999999
+offset_bottom = 17.0
 rotation = -1.5707964
 theme_override_fonts/font = ExtResource("5_8qsmg")
 theme_override_font_sizes/font_size = 5
 text = "spare"
 
 [node name="kill_button" parent="." unique_id=1328932378 instance=ExtResource("8_pnnky")]
-position = Vector2(-47, 100)
+position = Vector2(-44, 100)
 rotation = 1.5707964
 
 [node name="Label" type="Label" parent="kill_button" unique_id=1935341938]
-offset_left = -7.9999986
+offset_left = -8.999999
 offset_top = 9.0
-offset_right = 17.000002
-offset_bottom = 15.0
+offset_right = 11.000001
+offset_bottom = 14.0
 rotation = -1.5707964
 theme_override_fonts/font = ExtResource("5_8qsmg")
 theme_override_font_sizes/font_size = 5

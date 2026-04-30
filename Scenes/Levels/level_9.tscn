@@ -47,7 +47,7 @@ tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAA
 tile_set = SubResource("TileSet_m686n")
 
 [node name="spawn_point" type="Marker2D" parent="." unique_id=810920023]
-position = Vector2(-17, 16)
+position = Vector2(-169, -58)
 
 [node name="portal" parent="." unique_id=280529490 instance=ExtResource("3_msvyy")]
 position = Vector2(165, 92)
@@ -181,9 +181,6 @@ position = Vector2(-59, 20)
 [node name="spike23" parent="Spikes" unique_id=1386720552 instance=ExtResource("9_c368q")]
 position = Vector2(-52, 20)
 
-[node name="spike47" parent="Spikes" unique_id=251399423 instance=ExtResource("9_c368q")]
-position = Vector2(97, 100)
-
 [node name="spike24" parent="Spikes" unique_id=863476389 instance=ExtResource("9_c368q")]
 position = Vector2(-123, -28)
 rotation = 3.1415927
@@ -276,9 +273,6 @@ rotation = 3.1415927
 position = Vector2(100, 4)
 rotation = 3.1415927
 
-[node name="spike46" parent="Spikes" unique_id=1290937379 instance=ExtResource("9_c368q")]
-position = Vector2(-157, 100)
-
 [node name="Cannons" type="Node2D" parent="." unique_id=2085681461]
 
 [node name="cannon" parent="Cannons" unique_id=1599895328 instance=ExtResource("7_2ergn")]
@@ -364,13 +358,7 @@ fire_interval = 0.15
 fire_direction = Vector2(0, 1)
 
 [node name="cannon14" parent="Cannons" unique_id=306384527 instance=ExtResource("7_2ergn")]
-position = Vector2(12, -18)
-projectile_scene = ExtResource("8_msvyy")
-fire_interval = 3.0
-fire_direction = Vector2(-1, 0)
-
-[node name="cannon15" parent="Cannons" unique_id=1201378531 instance=ExtResource("7_2ergn")]
-position = Vector2(12, -9.999998)
+position = Vector2(12, -22)
 projectile_scene = ExtResource("8_msvyy")
 fire_interval = 3.0
 fire_direction = Vector2(-1, 0)
@@ -391,18 +379,6 @@ move_range = 1.0
 
 [node name="saw2" parent="Saws" unique_id=904888571 instance=ExtResource("9_8louo")]
 position = Vector2(-7, -70)
-move_direction = 1
-move_speed = 100.0
-move_range = 60.0
-
-[node name="saw3" parent="Saws" unique_id=1034488633 instance=ExtResource("9_8louo")]
-position = Vector2(5, -79)
-move_direction = 1
-move_speed = 100.0
-move_range = 60.0
-
-[node name="saw4" parent="Saws" unique_id=1946675780 instance=ExtResource("9_8louo")]
-position = Vector2(18, -89)
 move_direction = 1
 move_speed = 100.0
 move_range = 60.0

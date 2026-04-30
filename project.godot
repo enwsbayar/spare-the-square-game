@@ -13,6 +13,8 @@ config_version=5
 config/name="spare_the_square"
 run/main_scene="uid://b2n4xpbrhrp0l"
 config/features=PackedStringArray("4.6", "Mobile")
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=8000
 config/icon="res://icon.svg"
 
 [display]
