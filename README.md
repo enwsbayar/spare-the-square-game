@@ -2,7 +2,7 @@
 
 ![Spare the Square](img/img.png)
 
-PLAY:  https://spare-the-square-game.netlify.app/
+PLAY:  https://spare-the-square.netlify.app/
 
 A 2D pixel-art platformer made with Godot 4.6.
 
